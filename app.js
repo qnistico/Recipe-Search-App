@@ -4,6 +4,7 @@ const searchResults = document.querySelector('.search-results')
 const container = document.querySelector('.container')
 const accordionBtns = document.querySelectorAll('.accordion-btn')
 const accordions = document.querySelectorAll('.accordion')
+const expandsMore = document.querySelectorAll('[expand-more]')
 const APP_ID = 'b92bed07'
 const APP_KEY = `f01fb47383d71cae1ddeaa57bd8b8c15`
 
@@ -20,14 +21,6 @@ searchBtn.addEventListener('click', () => {
     fetchAPI()
 })
 
-accordionBtns.forEach(btn => {
-    btn.addEventListener('click', ()  => {
-        btn.classList.add('hide')
-        console.log(btn)
-    })
-})
-
-console.log(accordionBtns)
 
 
 
