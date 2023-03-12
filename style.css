@@ -199,7 +199,6 @@ h1 {
     font-weight: 600;
     color: var(--green);
     cursor: pointer;
-    display: none;
 }
 
 .accordion-btn .btn-arrow {
@@ -215,16 +214,25 @@ h1 {
 
 .accordion {
     margin-top: 10px;
+}
+
+.accordion-content {
     display: none;
 }
 
-.accordion.active {
+.show-accordion-content {
+    display: block;
+}
+
+.active {
     display: block !important;
 }
 
 .hide {
     display: none !important;
 }
+
+
 
 @media screen and (min-width: 1920px) {
     .container {

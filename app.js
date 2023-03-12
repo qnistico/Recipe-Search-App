@@ -4,7 +4,6 @@ const searchResults = document.querySelector('.search-results')
 const container = document.querySelector('.container')
 const accordionBtns = document.querySelectorAll('.accordion-btn')
 const accordions = document.querySelectorAll('.accordion')
-const expandsMore = document.querySelectorAll('[expand-more]')
 const APP_ID = 'b92bed07'
 const APP_KEY = `f01fb47383d71cae1ddeaa57bd8b8c15`
 
@@ -61,3 +60,30 @@ function renderHTML(results) {
     })
     searchResults.innerHTML = renderedHTML;
 }
+
+/*
+const tabitem = document.querySelectorAll('.tabitem')
+const tabpar = document.querySelectorAll('.tabitem p')
+
+tabitem.forEach(tab => {
+    tab.addEventListener('click', () => {
+        let child = tab.children
+        child[1].classList.toggle('hide')
+       console.log(child)
+    })
+})
+*/
+
+accordions.forEach(accordion => {
+    let accordion = document.querySelector('.accordion')
+    accordion.addEventListener('click', () => {
+        console.log('clicked')
+    })
+})
+
+
+
+
+
+
+
