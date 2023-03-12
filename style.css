@@ -215,6 +215,7 @@ h1 {
 
 .accordion {
     margin-top: 10px;
+    display: none;
 }
 
 .accordion.active {
