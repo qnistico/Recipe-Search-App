@@ -74,12 +74,6 @@ tabitem.forEach(tab => {
 })
 */
 
-accordions.forEach(accordion => {
-    let accordion = document.querySelector('.accordion')
-    accordion.addEventListener('click', () => {
-        console.log('clicked')
-    })
-})
 
 
 
