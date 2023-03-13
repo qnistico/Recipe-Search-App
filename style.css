@@ -199,6 +199,7 @@ h1 {
     font-weight: 600;
     color: var(--green);
     cursor: pointer;
+    display: none;
 }
 
 .accordion-btn .btn-arrow {
