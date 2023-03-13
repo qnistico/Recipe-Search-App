@@ -74,6 +74,12 @@ tabitem.forEach(tab => {
 })
 */
 
+const tabContainer = document.querySelector('.tabs-container')
+const tabItem = document.querySelectorAll('.tab')
+const tabItemContent = document.querySelectorAll('.tab-content')
+const tabBtns = document.querySelectorAll('.tab-btns button')
+
+
 
 
 
