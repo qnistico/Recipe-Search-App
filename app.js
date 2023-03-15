@@ -4,6 +4,8 @@ const searchResults = document.querySelector('.search-results')
 const container = document.querySelector('.container')
 const accordionBtns = document.querySelectorAll('.accordion-btn')
 const accordions = document.querySelectorAll('.accordion')
+const resetBtn = document.querySelector('.clear-search')
+const fixedImage = document.querySelector('.fixed-img')
 const APP_ID = 'b92bed07'
 const APP_KEY = `f01fb47383d71cae1ddeaa57bd8b8c15`
 
@@ -12,15 +14,23 @@ const APP_KEY = `f01fb47383d71cae1ddeaa57bd8b8c15`
 searchInput.addEventListener('keypress', (e) => {
     if (e.key === 'Enter') {
         let searchQuery = e.target.value;
+        searchResults.classList.remove('hide')
+        searchResults.classList.add('show')
         fetchAPI()
     }
 })
 searchBtn.addEventListener('click', () => {
     let searchQuery = searchInput.value;
+    searchResults.classList.remove('hide')
+    searchResults.classList.add('show')
     fetchAPI()
 })
-
-
+resetBtn.addEventListener('click', () => {
+    searchResults.classList.remove('show')
+    searchResults.classList.add('hide')
+    fixedImage.classList.remove('increase-opacity')
+    console.log('click')
+})
 
 
 
@@ -45,34 +55,16 @@ function renderHTML(results) {
                     <h2 class="text-center">${result.recipe.label}</h2>
                     <a href="${result.recipe.url}" class="recipe-btn" target="_blank">Get Recipe<span class="btn-arrow"><i
                                 class="fas fa-chevron-right"></i></span></a>
-                    <button class="accordion-btn text-center">See Details<span class="btn-arrow"><i
-                    class="fas fa-chevron-right"></i></span></button>
-                    <div class="accordion">
-                    <p><span class="bold">Dish type: </span>${result.recipe.dishType}</p>
-                    <p><span class="bold">Cuisine type: </span>${result.recipe.cuisineType}</p>
-                    <p><span class="bold">Est. Prep Time: </span>${result.recipe.totalTime}</p>
-                    <p class="search-item-data text-center">Calories: ${result.recipe.calories.toFixed(0)}</p>
-                    </div>
-
                 </div>
             </div>
         `
     })
     searchResults.innerHTML = renderedHTML;
+    fixedImage.classList.add('increase-opacity')
 }
 
-/*
-const tabitem = document.querySelectorAll('.tabitem')
-const tabpar = document.querySelectorAll('.tabitem p')
 
-tabitem.forEach(tab => {
-    tab.addEventListener('click', () => {
-        let child = tab.children
-        child[1].classList.toggle('hide')
-       console.log(child)
-    })
-})
-*/
+
 
 
 
