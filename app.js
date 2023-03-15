@@ -13,14 +13,12 @@ const APP_KEY = `f01fb47383d71cae1ddeaa57bd8b8c15`
 
 searchInput.addEventListener('keypress', (e) => {
     if (e.key === 'Enter') {
-        let searchQuery = e.target.value;
         searchResults.classList.remove('hide')
         searchResults.classList.add('show')
         fetchAPI()
     }
 })
 searchBtn.addEventListener('click', () => {
-    let searchQuery = searchInput.value;
     searchResults.classList.remove('hide')
     searchResults.classList.add('show')
     fetchAPI()
@@ -29,8 +27,8 @@ resetBtn.addEventListener('click', () => {
     searchResults.classList.remove('show')
     searchResults.classList.add('hide')
     fixedImage.classList.remove('increase-opacity')
-    console.log('click')
 })
+
 
 
 async function fetchAPI() {
