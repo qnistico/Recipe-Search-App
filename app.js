@@ -33,7 +33,6 @@ resetBtn.addEventListener('click', () => {
 })
 
 
-
 async function fetchAPI() {
 
     const baseURL = `https://api.edamam.com/api/recipes/v2?type=any&q=${searchInput.value}&app_id=${APP_ID}&app_key=${APP_KEY}
